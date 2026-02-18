@@ -4,6 +4,7 @@ import { env } from './config/env';
 import { logger } from './config/logger';
 import { seedRoles } from './seed/seedRoles';
 import { seedPolicies } from './seed/seedPolicies';
+import { seedLeavePolicies } from './seed/seedLeavePolicies';
 import { seedAdmin, seedEmployee } from './seed/seedAdmin';
 
 const startServer = async (): Promise<void> => {
@@ -14,6 +15,7 @@ const startServer = async (): Promise<void> => {
         // Auto-seed on startup (idempotent)
         await seedRoles();
         await seedPolicies();
+        await seedLeavePolicies();
         await seedAdmin();
         await seedEmployee();
 

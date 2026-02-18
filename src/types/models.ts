@@ -43,3 +43,17 @@ export type LeaveStatus = (typeof LEAVE_STATUSES)[number];
 /** User roles — extensible for future Manager, HR, Team Lead */
 export const USER_ROLES = ['admin', 'employee', 'manager', 'hr', 'team_lead'] as const;
 export type UserRole = (typeof USER_ROLES)[number];
+
+/** ── Leave Policy Enums ── */
+
+export const LEAVE_POLICY_TYPES = ['ACCRUAL', 'ENCASHMENT', 'CARRY_FORWARD', 'RESTRICTION'] as const;
+export type LeavePolicyType = (typeof LEAVE_POLICY_TYPES)[number];
+
+export const ACCRUAL_FREQUENCIES = ['MONTHLY', 'QUARTERLY', 'YEARLY', 'ON_JOINING'] as const;
+export type AccrualFrequency = (typeof ACCRUAL_FREQUENCIES)[number];
+
+export const CARRY_FORWARD_MODES = ['UNLIMITED', 'CAPPED', 'NONE'] as const;
+export type CarryForwardMode = (typeof CARRY_FORWARD_MODES)[number];
+
+export const ROUNDING_MODES = ['FLOOR', 'CEIL', 'NEAREST'] as const;
+export type RoundingMode = (typeof ROUNDING_MODES)[number];
